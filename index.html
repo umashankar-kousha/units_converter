@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-container">
+      <div class="card">
+        <div>
+          <button class="btn active">Tempareture</button>
+          <button class="btn">Length</button>
+          <button class="btn">Weight</button>
+        </div>
+        <form id="form">
+          <select name="from" id="from">
+            <option value="Celcius">Celcius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+          </select>
+          <select name="to" id="to">
+            <option value="Celcius">Celcius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+          </select>
+        </form>
+        <input type="text" placeholder="Enter Value" id="value" />
+        <div>
+          <button class="btn convert-btn">convert</button>
+          <button class="btn reset-btn">Reset</button>
+        </div>
+        <p class="result">Result : <span>200</span>Units</p>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
