@@ -8,6 +8,7 @@ let toEl = document.getElementById("to");
 let valueEl = document.getElementById("value");
 let convertBtnEl = document.getElementById("convertBtn");
 let resultEl = document.getElementById("result");
+let resetBtnEl = document.getElementById("resetBtn");
 
 //units
 const units = {
@@ -134,4 +135,12 @@ convertBtnEl.addEventListener("click", () => {
     //console.log(result.toFixed(2));
     resultEl.textContent = `${result.toFixed(2)} ${to}`;
   }
+});
+
+resetBtnEl.addEventListener("click", function () {
+  category = categories[0];
+  toggleActive(category);
+  renderOptions(category);
+  valueEl.value = "";
+  resultEl.innerHTML = "";
 });
