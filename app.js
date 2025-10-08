@@ -106,24 +106,28 @@ weightBtnEl.addEventListener("click", () => {
   renderOptions(category);
 });
 
-function getValidInput(input) {
-  if (input === "" || isNaN(Number(input))) {
-    return false;
-  } else {
-    return true;
+function handleSameOption(from, to) {
+  if (from === to) {
+    let currentIndex = units[category].indexOf(from);
+    let nextIndex = (currentIndex + 1) % units[category].length;
+    to = units[category][nextIndex];
+
+    toEl.value = to;
   }
+  return to;
 }
 
 convertBtnEl.addEventListener("click", () => {
   let from = fromEl.value;
   let to = toEl.value;
   let input = valueEl.value;
-  let isValidInput = getValidInput(input);
-  if (isValidInput) {
+  to = handleSameOption(from, to);
+
+  if (input === "" || isNaN(Number(input))) {
+    alert("Please Enter Valid Number");
+  } else {
     let result = conversions[category][`${from}To${to}`](Number(input));
     //console.log(result.toFixed(2));
     resultEl.textContent = `${result.toFixed(2)} ${to}`;
-  } else {
-    alert("Please Enter Valid Number");
   }
 });
