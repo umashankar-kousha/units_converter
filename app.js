@@ -1,4 +1,6 @@
-let temparetureBtnEl = document.getElementById("temparetureBtn");
+// DOM Elements Declaration
+
+let temperatureBtnEl = document.getElementById("temperatureBtn");
 let lengthBtnEl = document.getElementById("lengthBtn");
 let weightBtnEl = document.getElementById("weightBtn");
 let fromEl = document.getElementById("from");
@@ -7,14 +9,16 @@ let valueEl = document.getElementById("value");
 let convertBtnEl = document.getElementById("convertBtn");
 let resultEl = document.getElementById("result");
 
+//units
 const units = {
-  tempareture: ["Celsius", "Fahrenheit", "Kelvin"],
+  temperature: ["Celsius", "Fahrenheit", "Kelvin"],
   weight: ["Grams", "Kilograms", "Pounds"],
   length: ["Centimeters", "Meters", "Kilometers", "Inches"],
 };
 
+// conversions logics
 const conversions = {
-  tempareture: {
+  temperature: {
     CelsiusToFahrenheit: (v) => (v * 9) / 5 + 32,
     CelsiusToKelvin: (v) => v + 273.15,
     FahrenheitToCelsius: (v) => ((v - 32) * 5) / 9,
@@ -46,7 +50,7 @@ const conversions = {
   },
 };
 
-let categories = ["tempareture", "length", "weight"];
+let categories = ["temperature", "length", "weight"];
 let category = categories[0];
 
 function renderOptions(category) {
@@ -68,24 +72,24 @@ function renderOptions(category) {
 }
 
 function toggleActive(active) {
-  if (active === "tempareture") {
-    temparetureBtnEl.classList.add("active");
+  if (active === "temperature") {
+    temperatureBtnEl.classList.add("active");
     lengthBtnEl.classList.remove("active");
     weightBtnEl.classList.remove("active");
   } else if (active === "length") {
     lengthBtnEl.classList.add("active");
-    temparetureBtnEl.classList.remove("active");
+    temperatureBtnEl.classList.remove("active");
     weightBtnEl.classList.remove("active");
   } else if (active === "weight") {
     lengthBtnEl.classList.remove("active");
-    temparetureBtnEl.classList.remove("active");
+    temperatureBtnEl.classList.remove("active");
     weightBtnEl.classList.add("active");
   }
 }
 
 renderOptions(category);
 
-temparetureBtnEl.addEventListener("click", () => {
+temperatureBtnEl.addEventListener("click", () => {
   category = categories[0];
   toggleActive(category);
 
