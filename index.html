@@ -10,28 +10,20 @@
     <div class="bg-container">
       <div class="card">
         <div>
-          <button class="btn active">Tempareture</button>
-          <button class="btn">Length</button>
-          <button class="btn">Weight</button>
+          <button class="btn active" id="temparetureBtn">Tempareture</button>
+          <button class="btn" id="lengthBtn">Length</button>
+          <button class="btn" id="weightBtn">Weight</button>
         </div>
         <form id="form">
-          <select name="from" id="from">
-            <option value="Celcius">Celcius</option>
-            <option value="Fahrenheit">Fahrenheit</option>
-            <option value="Kelvin">Kelvin</option>
-          </select>
-          <select name="to" id="to">
-            <option value="Celcius">Celcius</option>
-            <option value="Fahrenheit">Fahrenheit</option>
-            <option value="Kelvin">Kelvin</option>
-          </select>
+          <select name="from" id="from"></select>
+          <select name="to" id="to"></select>
         </form>
         <input type="text" placeholder="Enter Value" id="value" />
         <div>
-          <button class="btn convert-btn">convert</button>
+          <button class="btn convert-btn" id="convertBtn">convert</button>
           <button class="btn reset-btn">Reset</button>
         </div>
-        <p class="result">Result : <span>200</span>Units</p>
+        <p class="result">Result : <span id="result">200</span></p>
       </div>
     </div>
     <script src="./app.js"></script>
